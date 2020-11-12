@@ -1,0 +1,68 @@
+<div class="container" *ngIf="empleado">
+    <div class="row mt-5">
+        <div class="col-md-4 mx-auto">
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="primerApellido">Primer Apellido</label>
+                    <input type="text" class="form-control" id="primerApellido" name="primerApellido"
+                    size="20" maxlength="20" 
+                    onkeyup="javascript:this.value=this.value.toUpperCase();"
+                    [(ngModel)]="empleado.primerApellido" required>
+                </div>
+                <div class="form-group">
+                    <label for="segundoApellido">Segundo Apellido</label>
+                    <input type="text" class="form-control" id="segundoApellido" name="segundoApellido"
+                    size="20" maxlength="20" 
+                    onkeyup="javascript:this.value=this.value.toUpperCase();"
+                    [(ngModel)]="empleado.segundoApellido" required>
+                </div>
+                <div class="form-group">
+                    <label for="primerNombre">Primer Nombre</label>
+                    <input type="text" class="form-control" id="primerNombre" name="primerNombre"
+                    size="20" maxlength="20" 
+                    onkeyup="javascript:this.value=this.value.toUpperCase();"
+                    [(ngModel)]="empleado.primerNombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="otroNombre">Otro Nombre</label>
+                    <input type="text" class="form-control" id="otroNombre" name="otroNombre"
+                    size="20" maxlength="50" 
+                    onkeyup="javascript:this.value=this.value.toUpperCase();"
+                    [(ngModel)]="empleado.otroNombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="pais">Pais del empleo</label>
+                    <select name="select_pais" style="font-size: 18px; width: 100%; border: 1px solid #cecdcd;" 
+                    [(ngModel)]="empleado.pais" required>
+                        <option [value]="item" *ngFor="let item of lista_pais">{{item}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="tipoIdentificacion">Tipo Identificacion</label>
+                    <select name="select_id" style="font-size: 18px; width: 100%; border: 1px solid #cecdcd;"
+                     [(ngModel)]="empleado.tipoIdentificacion" required>
+                        <option [value]="item" *ngFor="let item of tipo_id">{{item}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="numIdentificacion">Numero Identificacion</label>
+                    <input type="text" class="form-control" id="numIdentificacion" name="numIdentificacion"
+                    [(ngModel)]="empleado.numIdentificacion" required>
+                </div>
+                <div class="form-group">
+                    <label for="fechaIngreso">Fecha de Ingreso</label>
+                    <input type="date" [max]="today" class="form-control" id="fechaIngreso" name="fechaIngreso"
+                    [(ngModel)]="empleado.fechaIngreso" required>
+                </div>
+                <div class="form-group">
+                    <label for="area">Area</label>
+                    <select name="select_area" style="font-size: 18px; width: 100%; border: 1px solid #cecdcd;" 
+                    [(ngModel)]="empleado.area" required>
+                        <option [value]="item" *ngFor="let item of lista_area">{{item}}</option>
+                    </select>
+                </div>
+                <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">Actualizar</button>
+            </form>
+        </div>
+    </div>
+</div>

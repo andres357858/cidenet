@@ -1,0 +1,11 @@
+Intrucciones Back-Spring Boot
+
+1. Crear base de datos MySql con nombre 'cidenet' usuario= 'root' contraseña = ''
+2. Compilar
+3. Ejecutar
+
+
+Instrucciones Front-Angular
+
+1. Ejecutar comando 'npm install' en la carpeta del proyecto
+2. Ejecutar con el comando 'ng serve'
